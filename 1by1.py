@@ -224,25 +224,12 @@ def inference(categories,input_str, input_image, bbox_img, follow_up=False, gene
     #print("LOGITS:",logits)
     first_logits_shape = logits[0].shape
     logits_tensor = logits[0]
-    logits_tensor = logits_tensor.to(torch.float32)  # 将bfloat16转换为float32
+    logits_tensor = logits_tensor.to(torch.float32)  
     probs = F.softmax(logits_tensor, dim=-1)
-    # initial_probs = probs[0, 0, :]
+    initial_probs = probs[0, -1, :]  
 
-    # # 获取每个位置的概率最高的10个索引及其对应的概率
-    # top_probs, top_indices = torch.topk(initial_probs, 50, dim=-1)
-
-    # # 打印每个位置概率最高的10个单词及其概率
-    # print(f"Initial word probabilities:")
-    # for j in range(50):
-    #     word = tokenizer.decode([top_indices[j].item()])
-    #     prob = top_probs[j].item()
-    #     print(f"  {word}: {prob:.4f}")
-    initial_probs = probs[0, -1, :]  # 获取第一个位置的概率分布
-
-    # 获取每个类别在词汇表中的索引
     category_indices = [tokenizer.encode(category, add_special_tokens=False)[0] for category in categories]
 
-    # 打印每个类别对应的概率
     print(f"Probabilities for specified categories at initial position:")
     
     category_probs = []
@@ -345,13 +332,13 @@ if __name__ == "__main__":
             elif item['data_source']=='ADE':
                 input_str = """Select the class for <bbox> from: arm, armchair, bed, book, bottle, box, building, cabinet, car, ceiling, chair, column, curtain, cushion, door, drawer, fence, floors, flower, glass, grass, handle, head, lamp, leg, light, light source, mirror, mountain, pane, person, picture, pillow, plant, plate, pole, pot, road, rock, seat, shelf, sign, sofa, spotlight, streetlight, table, tree, vase, wheel, window."""
                 categories=['arm', 'armchair', 'bed', 'book', 'bottle', 'box', 'building', 'cabinet', 'car', 'ceiling', 'chair', 'column', 'curtain', 'cushion', 'door', 'drawer', 'fence', 'floors', 'flower', 'glass', 'grass', 'handle', 'head', 'lamp', 'leg', 'light', 'light source', 'mirror', 'mountain', 'pane', 'person', 'picture', 'pillow', 'plant', 'plate', 'pole', 'pot', 'road', 'rock', 'seat', 'shelf', 'sign', 'sofa', 'spotlight', 'streetlight', 'table', 'tree', 'vase', 'wheel', 'window']
-        folder_path = item['folder']  # 从folder字段提取目录路径
-        folder_path = folder_path.replace('bbox', 'raw')  # 将目录从'bbox'更改为'raw'
+        folder_path = item['folder']
+        folder_path = folder_path.replace('bbox', 'raw') 
         folder_path = folder_path.replace('png', 'jpg')
         base_path='/nfs/turbo/coe-chaijy/xuejunzh/data'
         if folder_path.startswith('/'):
-            folder_path = folder_path[1:]  # 移除开头的斜线，使其成为相对路径
-        image_path = os.path.join(base_path, folder_path)  # 形成完整路径
+            folder_path = folder_path[1:] 
+        image_path = os.path.join(base_path, folder_path)  
         #print("image_path",image_path)
         for obj in item['objects']:
             bbox = [[int(obj['bndbox']['xmin']), int(obj['bndbox']['ymin']), int(obj['bndbox']['xmax']), int(obj['bndbox']['ymax'])]]
