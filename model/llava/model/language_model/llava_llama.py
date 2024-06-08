@@ -105,7 +105,7 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
 
         hidden_states = outputs[0]
         logits = self.lm_head(hidden_states)
-
+        # print("LOGITS:",logits)
         loss = None
         if labels is not None:
             # Shift so that tokens < n predict n

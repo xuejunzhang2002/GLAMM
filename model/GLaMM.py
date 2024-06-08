@@ -295,6 +295,10 @@ class GLaMMForCausalLM(LlavaLlamaForCausalLM):
             output_hidden_states = generation_outputs.hidden_states
             generated_output_ids = generation_outputs.sequences
 
+            logits = []
+            for hidden_state in output_hidden_states:
+                logits.append(self.lm_head(hidden_state))
+            # print("logits:",logits)
             seg_token_mask = generated_output_ids[:, 1:] == self.seg_token_idx
             # Adjusting for IMAGE_TOKEN_INDEX (assuming single image at start)
             seg_token_mask = torch.cat(
@@ -308,4 +312,4 @@ class GLaMMForCausalLM(LlavaLlamaForCausalLM):
             pred_masks = self._generate_and_postprocess_masks(
                 predicted_embeddings, image_embeddings, resize_list, orig_sizes, infer=True
             )
-        return generated_output_ids, pred_masks
+        return generated_output_ids, pred_masks,logits

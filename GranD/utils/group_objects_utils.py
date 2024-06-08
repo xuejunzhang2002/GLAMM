@@ -59,6 +59,7 @@ class CLIPClassifier():
         outputs = self.clip_model(**inputs)
         logits_per_image = outputs.logits_per_image
         probs = logits_per_image.softmax(dim=1)
+        print("probs:",probs)
         if top_k == 1:
             return class_list[probs.argmax().item()]
         else:
