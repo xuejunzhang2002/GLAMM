@@ -26,7 +26,8 @@
                     "ymax": 700
                 },
                 "area": 51522,
-                "bbox_number": 1
+                "bbox_number": 1,
+                "prediction": "pillow"
             },
             {
                 "name": "grass",
@@ -39,7 +40,8 @@
                     "ymax": 1249
                 },
                 "area": 274085,
-                "bbox_number": 2
+                "bbox_number": 2,
+                "prediction": "grass"
             },
             {
                 "name": "column",
@@ -52,7 +54,8 @@
                     "ymax": 690
                 },
                 "area": 56350,
-                "bbox_number": 3
+                "bbox_number": 3,
+                "prediction": "pillow"
             },
             {
                 "name": "building",
@@ -65,7 +68,8 @@
                     "ymax": 841
                 },
                 "area": 107439,
-                "bbox_number": 4
+                "bbox_number": 4,
+                "prediction": "building"
             },
             {
                 "name": "tree",
@@ -78,7 +82,8 @@
                     "ymax": 272
                 },
                 "area": 157263,
-                "bbox_number": 5
+                "bbox_number": 5,
+                "prediction": "tree"
             }
         ],
         "relations": [],
@@ -130,7 +135,8 @@
                     "ymax": 697
                 },
                 "area": 46020,
-                "bbox_number": 1
+                "bbox_number": 1,
+                "prediction": "pillow"
             },
             {
                 "name": "picture",
@@ -143,7 +149,8 @@
                     "ymax": 142
                 },
                 "area": 36120,
-                "bbox_number": 2
+                "bbox_number": 2,
+                "prediction": "picture"
             },
             {
                 "name": "cushion",
@@ -156,7 +163,8 @@
                     "ymax": 594
                 },
                 "area": 33156,
-                "bbox_number": 3
+                "bbox_number": 3,
+                "prediction": "pillow"
             },
             {
                 "name": "picture",
@@ -169,7 +177,8 @@
                     "ymax": 365
                 },
                 "area": 88088,
-                "bbox_number": 4
+                "bbox_number": 4,
+                "prediction": "picture"
             },
             {
                 "name": "cushion",
@@ -182,7 +191,8 @@
                     "ymax": 431
                 },
                 "area": 22815,
-                "bbox_number": 5
+                "bbox_number": 5,
+                "prediction": "pillow"
             }
         ],
         "relations": [],
@@ -237,7 +247,8 @@
                     "ymax": 310
                 },
                 "area": 3330,
-                "bbox_number": 1
+                "bbox_number": 1,
+                "prediction": "drawer"
             },
             {
                 "name": "drawer",
@@ -250,7 +261,8 @@
                     "ymax": 272
                 },
                 "area": 2920,
-                "bbox_number": 2
+                "bbox_number": 2,
+                "prediction": "drawer"
             },
             {
                 "name": "drawer",
@@ -263,7 +275,8 @@
                     "ymax": 235
                 },
                 "area": 2812,
-                "bbox_number": 3
+                "bbox_number": 3,
+                "prediction": "drawer"
             },
             {
                 "name": "shelf",
@@ -276,7 +289,8 @@
                     "ymax": 182
                 },
                 "area": 16422,
-                "bbox_number": 4
+                "bbox_number": 4,
+                "prediction": "shelf"
             },
             {
                 "name": "cushion",
@@ -289,7 +303,8 @@
                     "ymax": 323
                 },
                 "area": 5073,
-                "bbox_number": 5
+                "bbox_number": 5,
+                "prediction": "pillow"
             }
         ],
         "relations": [],
@@ -357,7 +372,8 @@
                     "ymax": 1149
                 },
                 "area": 63423,
-                "bbox_number": 1
+                "bbox_number": 1,
+                "prediction": "chair"
             },
             {
                 "name": "curtain",
@@ -370,7 +386,8 @@
                     "ymax": 964
                 },
                 "area": 155575,
-                "bbox_number": 2
+                "bbox_number": 2,
+                "prediction": "window"
             },
             {
                 "name": "curtain",
@@ -383,7 +400,8 @@
                     "ymax": 1222
                 },
                 "area": 249200,
-                "bbox_number": 3
+                "bbox_number": 3,
+                "prediction": "window"
             },
             {
                 "name": "flower",
@@ -396,7 +414,8 @@
                     "ymax": 1071
                 },
                 "area": 64355,
-                "bbox_number": 4
+                "bbox_number": 4,
+                "prediction": "flowerpot"
             },
             {
                 "name": "picture",
@@ -409,7 +428,8 @@
                     "ymax": 822
                 },
                 "area": 236682,
-                "bbox_number": 5
+                "bbox_number": 5,
+                "prediction": "picture"
             }
         ],
         "relations": [],
@@ -485,7 +505,8 @@
                     "ymax": 925
                 },
                 "area": 651064,
-                "bbox_number": 1
+                "bbox_number": 1,
+                "prediction": "building"
             },
             {
                 "name": "tree",
@@ -498,7 +519,8 @@
                     "ymax": 798
                 },
                 "area": 36018,
-                "bbox_number": 2
+                "bbox_number": 2,
+                "prediction": "tree"
             },
             {
                 "name": "tree",
@@ -511,7 +533,8 @@
                     "ymax": 939
                 },
                 "area": 67326,
-                "bbox_number": 3
+                "bbox_number": 3,
+                "prediction": "building"
             },
             {
                 "name": "tree",
@@ -524,7 +547,8 @@
                     "ymax": 783
                 },
                 "area": 44548,
-                "bbox_number": 4
+                "bbox_number": 4,
+                "prediction": "building"
             },
             {
                 "name": "tree",
@@ -537,7 +561,8 @@
                     "ymax": 830
                 },
                 "area": 36465,
-                "bbox_number": 5
+                "bbox_number": 5,
+                "prediction": "tree"
             }
         ],
         "relations": [],
@@ -605,7 +630,8 @@
                     "ymax": 141
                 },
                 "area": 5600,
-                "bbox_number": 1
+                "bbox_number": 1,
+                "prediction": "window"
             },
             {
                 "name": "chair",
@@ -618,7 +644,8 @@
                     "ymax": 226
                 },
                 "area": 2884,
-                "bbox_number": 2
+                "bbox_number": 2,
+                "prediction": "chair"
             },
             {
                 "name": "chair",
@@ -631,7 +658,8 @@
                     "ymax": 166
                 },
                 "area": 1400,
-                "bbox_number": 3
+                "bbox_number": 3,
+                "prediction": "chair"
             },
             {
                 "name": "chair",
@@ -644,7 +672,8 @@
                     "ymax": 151
                 },
                 "area": 1015,
-                "bbox_number": 4
+                "bbox_number": 4,
+                "prediction": "chair"
             },
             {
                 "name": "chair",
@@ -657,7 +686,8 @@
                     "ymax": 187
                 },
                 "area": 3900,
-                "bbox_number": 5
+                "bbox_number": 5,
+                "prediction": "chair"
             }
         ],
         "relations": [],
@@ -716,7 +746,7 @@
                 },
                 "area": 40356,
                 "bbox_number": 1,
-                "prediction": "wine glass"
+                "prediction": "ceiling"
             },
             {
                 "name": "door",
@@ -730,7 +760,7 @@
                 },
                 "area": 44764,
                 "bbox_number": 2,
-                "prediction": "wine glass"
+                "prediction": "book"
             },
             {
                 "name": "drawer",
@@ -744,7 +774,7 @@
                 },
                 "area": 13216,
                 "bbox_number": 3,
-                "prediction": "wine glass"
+                "prediction": "drawer"
             },
             {
                 "name": "drawer",
@@ -758,7 +788,7 @@
                 },
                 "area": 14400,
                 "bbox_number": 4,
-                "prediction": "wine glass"
+                "prediction": "drawer"
             },
             {
                 "name": "drawer",
@@ -772,7 +802,7 @@
                 },
                 "area": 14495,
                 "bbox_number": 5,
-                "prediction": "wine glass"
+                "prediction": "drawer"
             }
         ],
         "relations": [],
@@ -865,7 +895,7 @@
                 },
                 "area": 1036,
                 "bbox_number": 1,
-                "prediction": "wine glass"
+                "prediction": "person"
             },
             {
                 "name": "door",
@@ -879,7 +909,7 @@
                 },
                 "area": 2688,
                 "bbox_number": 2,
-                "prediction": "wine glass"
+                "prediction": "person"
             },
             {
                 "name": "person",
@@ -893,7 +923,7 @@
                 },
                 "area": 2106,
                 "bbox_number": 3,
-                "prediction": "wine glass"
+                "prediction": "person"
             },
             {
                 "name": "door",
@@ -907,7 +937,7 @@
                 },
                 "area": 1080,
                 "bbox_number": 4,
-                "prediction": "wine glass"
+                "prediction": "window"
             },
             {
                 "name": "ceiling",
@@ -921,7 +951,7 @@
                 },
                 "area": 15756,
                 "bbox_number": 5,
-                "prediction": "wine glass"
+                "prediction": "light"
             }
         ],
         "relations": [],
@@ -972,8 +1002,7 @@
                     "ymax": 251
                 },
                 "area": 44640,
-                "bbox_number": 1,
-                "prediction": "cow"
+                "bbox_number": 1
             },
             {
                 "name": "flower",
@@ -986,8 +1015,7 @@
                     "ymax": 761
                 },
                 "area": 42120,
-                "bbox_number": 2,
-                "prediction": "cow"
+                "bbox_number": 2
             },
             {
                 "name": "chair",
@@ -1000,8 +1028,7 @@
                     "ymax": 918
                 },
                 "area": 68944,
-                "bbox_number": 3,
-                "prediction": "cow"
+                "bbox_number": 3
             },
             {
                 "name": "mirror",
@@ -1014,8 +1041,7 @@
                     "ymax": 485
                 },
                 "area": 233361,
-                "bbox_number": 4,
-                "prediction": "cow"
+                "bbox_number": 4
             },
             {
                 "name": "picture",
@@ -1028,8 +1054,7 @@
                     "ymax": 264
                 },
                 "area": 59769,
-                "bbox_number": 5,
-                "prediction": "cow"
+                "bbox_number": 5
             }
         ],
         "relations": [],

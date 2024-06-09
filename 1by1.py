@@ -348,10 +348,15 @@ if __name__ == "__main__":
             if prediction == obj['name']:
                 correct_predictions += 1
             total_predictions += 1
-            with open('args.output_file', 'w') as f:
+            with open(args.output_file, 'w') as f:
                 json.dump(data, f, indent=4)
+    output_dir = os.path.dirname(args.output_file)
+    accuracy_output_path = os.path.join(output_dir, 'output_accuracy.json')
     accuracy = correct_predictions / total_predictions if total_predictions > 0 else 0
     print(f"Accuracy: {accuracy:.4f}")
+    accuracy_data = {'accuracy': accuracy}
+    with open(accuracy_output_path, 'w') as f:
+        json.dump(accuracy_data, f, indent=4)
 
-    with open('args.output_file', 'w') as f:
+    with open(args.output_file, 'w') as f:
         json.dump(data, f, indent=4)
