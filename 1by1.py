@@ -19,8 +19,7 @@ from tools.utils import DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM
 from tools.markdown_utils import (markdown_default, examples, title, description, article, process_markdown, colors,
                                   draw_bbox, ImageSketcher)
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
-
+#os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
 def parse_args(args):
     parser = argparse.ArgumentParser(description="GLaMM Model Demo")
     parser.add_argument("--version", default="MBZUAI/GLaMM-FullScope")
@@ -185,6 +184,7 @@ def inference(categories,input_str, input_image, bbox_img, follow_up=False, gene
 
     input_str = input_str.replace('&lt;', '<').replace('&gt;', '>')
     prompt = input_str
+    
     prompt = f"The {DEFAULT_IMAGE_TOKEN} provides an overview of the picture." + "\n" + prompt
     if args.use_mm_start_end:
         replace_token = (DEFAULT_IM_START_TOKEN + DEFAULT_IMAGE_TOKEN + DEFAULT_IM_END_TOKEN)
@@ -216,9 +216,9 @@ def inference(categories,input_str, input_image, bbox_img, follow_up=False, gene
 
     input_ids = tokenizer_image_token(prompt, tokenizer, return_tensors="pt")
     input_ids = input_ids.unsqueeze(0).cuda()
-
+    #print("PROMPT:",prompt)
     output_ids, pred_masks, logits = model.evaluate(
-        global_enc_image, grounding_enc_image, input_ids, resize_list, original_size_list, max_tokens_new=512,
+        global_enc_image, grounding_enc_image, input_ids, resize_list, original_size_list, max_tokens_new=128,
         bboxes=bboxes)
     output_ids = output_ids[0][output_ids[0] != IMAGE_TOKEN_INDEX]
     #print("LOGITS:",logits)
@@ -314,7 +314,9 @@ if __name__ == "__main__":
     correct_predictions = 0
     total_predictions = 0
     categories=[]
-    for item in data[:10]:
+    output_dir = os.path.dirname(args.output_file)
+    os.makedirs(output_dir, exist_ok=True)
+    for item in data:
         if args.dataset_type=='validation':
             if item['data_source']=='COCO':
                 input_str = """what is the class of <bbox>"""
@@ -324,7 +326,7 @@ if __name__ == "__main__":
                 input_str = """what is the class of <bbox>"""
                 categories=[
         'plant', 'window', 'glass', 'windshield', 'vase', 'mirror', 'tree', 'ceiling', 'cabinet', 'rock', 'person', 'bag', 'chair', 'door', 'light', 'food', 'arm', 'base', 'bottle', 'brand', 'grass', 'box', 'pole', 'license plate', 'curtain', 'plate', 'mountain', 'table', 'head', 'building', 'balcony', 'shelf', 'pillow', 'column', 'shutter', 'flowerpot', 'leg', 'apron', 'sign', 'picture', 'cushion', 'flower', 'drawer', 'wheel', 'roof', 'book', 'price tag', 'car', 'rim', 'handle']
-        elif args.dataset_type=='test':
+        elif args.dataset_type=='train':
             if item['data_source']=='COCO':
                 input_str = """what is the class of <bbox>"""
                 categories=[
@@ -350,13 +352,17 @@ if __name__ == "__main__":
             total_predictions += 1
             with open(args.output_file, 'w') as f:
                 json.dump(data, f, indent=4)
+                
     output_dir = os.path.dirname(args.output_file)
+    os.makedirs(output_dir, exist_ok=True)
     accuracy_output_path = os.path.join(output_dir, 'output_accuracy.json')
     accuracy = correct_predictions / total_predictions if total_predictions > 0 else 0
     print(f"Accuracy: {accuracy:.4f}")
     accuracy_data = {'accuracy': accuracy}
+    os.makedirs(output_dir, exist_ok=True)
     with open(accuracy_output_path, 'w') as f:
         json.dump(accuracy_data, f, indent=4)
 
+    os.makedirs(output_dir, exist_ok=True)
     with open(args.output_file, 'w') as f:
         json.dump(data, f, indent=4)
