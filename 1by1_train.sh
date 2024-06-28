@@ -12,7 +12,7 @@
 #SBATCH --mail-type=BEGIN,END,FAIL  # Removed BEGIN and REQUEUE notifications
 
 # LLaVA-7b  COCO single turn
-python 1by1.py --input_file /nfs/turbo/coe-chaijy/xuejunzh/data/train/merged_mixed_data.json --output_file /nfs/turbo/coe-chaijy-unreplicated/xuejunzh/output-glamm/train/mixed_data_with_predictions.json --dataset_type train
+python 1by1.py --input_file /nfs/turbo/coe-chaijy-unreplicated/xuejunzh/output-glamm/train/mixed_data_with_predictions_new2.json --output_file /nfs/turbo/coe-chaijy-unreplicated/xuejunzh/output-glamm/train/mixed_data_with_predictions_new3.json --dataset_type train
 
 # # LLaVA-7b  ADE single turn
 # python 1by1.py --input_file /nfs/turbo/coe-chaijy/xuejunzh/data/train/merged_homogenous_data.json --output_file /nfs/turbo/coe-chaijy-unreplicated/xuejunzh/output-glamm/train/homogenous_data_with_predictions.json --dataset_type train

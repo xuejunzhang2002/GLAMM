@@ -19,7 +19,7 @@ from tools.utils import DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM
 from tools.markdown_utils import (markdown_default, examples, title, description, article, process_markdown, colors,
                                   draw_bbox, ImageSketcher)
 import os
-#os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
+os.environ["CUDA_VISIBLE_DEVICES"] = str(0)
 def parse_args(args):
     parser = argparse.ArgumentParser(description="GLaMM Model Demo")
     parser.add_argument("--version", default="MBZUAI/GLaMM-FullScope")
@@ -218,7 +218,7 @@ def inference(categories,input_str, input_image, bbox_img, follow_up=False, gene
     input_ids = input_ids.unsqueeze(0).cuda()
     #print("PROMPT:",prompt)
     output_ids, pred_masks, logits = model.evaluate(
-        global_enc_image, grounding_enc_image, input_ids, resize_list, original_size_list, max_tokens_new=128,
+        global_enc_image, grounding_enc_image, input_ids, resize_list, original_size_list, max_tokens_new=64,
         bboxes=bboxes)
     output_ids = output_ids[0][output_ids[0] != IMAGE_TOKEN_INDEX]
     #print("LOGITS:",logits)
